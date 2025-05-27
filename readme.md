@@ -103,7 +103,7 @@ Creación de un Script JavaScript
 Coloca tus scripts en frontend/assets/js/. Ejemplo: example.js.
 
 Código de Ejemplo
-javascript
+```javascript
 
 jQuery(document).ready(function($) {
     function createUser(username, password) {
@@ -118,6 +118,7 @@ jQuery(document).ready(function($) {
     // ... (otros métodos CRUD)
 });
 
+```
 Nota: Siempre usa window.MyEndpointRoot como prefijo en las URLs de AJAX. Esto asegura que las solicitudes se dirijan correctamente al backend.
 
 Encolar scripts y estilos
