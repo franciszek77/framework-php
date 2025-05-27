@@ -56,122 +56,35 @@ Tras ejecutar `install.php`, el framework tendrá esta estructura:
 
 ---
 
-## Creación de un módulo PHP
+## Creación de un Módulo PHP
 
-Los módulos PHP se colocan en el directorio `backend/modules/` y deben usar el namespace `MyFramework\Modules`. A continuación, un ejemplo de un módulo CRUD básico.
+Los módulos se colocan en `backend/modules/` con el namespace `MyFramework\Modules`. Ejemplo: `example.php`.
 
-### Ejemplo: `example.php`
-
-Crea el archivo `backend/modules/example.php` con el siguiente contenido:
-
+### Código de Ejemplo
 ```php
 <?php
 namespace MyFramework\Modules;
-
 use MyFramework\Core\Database;
 
 class Example {
     private $db;
-
-    public function __construct() {
-        $this->db = new Database(\MyFramework\Core\Config::$db_config);
-    }
-
-    // Registrar
+    public function __construct() { $this->db = new Database(\MyFramework\Core\Config::$db_config); }
     public function create($username, $password) {
-        $data = [
-            "username" => $username,
-            "password" => password_hash($password, PASSWORD_DEFAULT)
-        ];
+        $data = ["username" => $username, "password" => password_hash($password, PASSWORD_DEFAULT)];
         return $this->db->insert("users", $data);
     }
-
-    // Consultar todos
-    public function readAll() {
-        $sql = "SELECT * FROM users";
-        return $this->db->get_results($sql);
-    }
-
-    // Consultar uno
-    public function readOne($id) {
-        $sql = "SELECT * FROM users WHERE id = :id";
-        return $this->db->get_row($sql, ["id" => $id]);
-    }
-
-    // Modificar
-    public function update($id, $username, $password) {
-        $data = [
-            "username" => $username,
-            "password" => password_hash($password, PASSWORD_DEFAULT)
-        ];
-        $where = ["id" => $id];
-        return $this->db->update("users", $data, $where);
-    }
-
-    // Eliminar
-    public function delete($id) {
-        $sql = "DELETE FROM users WHERE id = :id";
-        $stmt = $this->db->query($sql, ["id" => $id]);
-        return $stmt->rowCount();
-    }
-
-    // Manejar solicitudes API
+    // ... (otros métodos CRUD)
     public static function handle() {
+        header("Content-Type: application/json");
         $method = $_SERVER["REQUEST_METHOD"];
         $example = new self();
-
-        header("Content-Type: application/json");
-
-        switch ($method) {
-            case "POST":
-                $data = json_decode(file_get_contents("php://input"), true);
-                if (isset($data["username"], $data["password"])) {
-                    $result = $example->create($data["username"], $data["password"]);
-                    echo json_encode(["success" => true, "id" => $result]);
-                } else {
-                    echo json_encode(["success" => false, "message" => "Faltan datos"]);
-                }
-                break;
-
-            case "GET":
-                if (isset($_GET["id"])) {
-                    $result = $example->readOne($_GET["id"]);
-                } else {
-                    $result = $example->readAll();
-                }
-                echo json_encode(["success" => true, "data" => $result]);
-                break;
-
-            case "PUT":
-                $data = json_decode(file_get_contents("php://input"), true);
-                if (isset($data["id"], $data["username"], $data["password"])) {
-                    $result = $example->update($data["id"], $data["username"], $data["password"]);
-                    echo json_encode(["success" => true, "affected" => $result]);
-                } else {
-                    echo json_encode(["success" => false, "message" => "Faltan datos"]);
-                }
-                break;
-
-            case "DELETE":
-                $data = json_decode(file_get_contents("php://input"), true);
-                if (isset($data["id"])) {
-                    $result = $example->delete($data["id"]);
-                    echo json_encode(["success" => true, "affected" => $result]);
-                } else {
-                    echo json_encode(["success" => false, "message" => "Falta el ID"]);
-                }
-                break;
-
-            default:
-                echo json_encode(["success" => false, "message" => "Método no soportado"]);
-                break;
-        }
+        // Lógica de manejo de solicitudes
     }
 }
-```
 
 Nota: Este archivo (example.php) es un ejemplo de referencia para operaciones CRUD. No lo elimines, ya que te servirá como guía para crear nuevos módulos.
 
+``` 
 Creación y acceso a páginas HTML
 Crear una página HTML
 Las páginas HTML se colocan en el directorio frontend/pages/. Puedes crear tu archivo HTML con el diseño que prefieras (inputs, tablas, etc.) y usar las clases de Bootstrap para aplicar estilos.
