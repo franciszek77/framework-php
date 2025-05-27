@@ -159,9 +159,11 @@ class Example {
 
 Nota: Este archivo (example.php) es un ejemplo de referencia para operaciones CRUD. No lo elimines, ya que te servirá como guía para crear nuevos módulos.
 
-Creación y acceso a páginas HTML
+## Creación y acceso a páginas HTML
 Crear una página HTML
-Las páginas HTML se colocan en el directorio frontend/pages/. Puedes crear tu archivo HTML con el diseño que prefieras (inputs, tablas, etc.) y usar las clases de Bootstrap para aplicar estilos.
+
+Las páginas HTML se colocan en el directorio frontend/pages/. 
+Puedes crear tu archivo HTML con el diseño que prefieras (inputs, tablas, etc.) y usar las clases de Bootstrap para aplicar estilos.
 
 Ejemplo: Crea frontend/pages/mi_pagina.html:
 
