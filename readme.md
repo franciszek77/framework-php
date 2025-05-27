@@ -85,130 +85,43 @@ class Example {
 Nota: Este archivo (example.php) es un ejemplo de referencia para operaciones CRUD. No lo elimines, ya que te servirá como guía para crear nuevos módulos.
 
 ``` 
-Creación y acceso a páginas HTML
-Crear una página HTML
-Las páginas HTML se colocan en el directorio frontend/pages/. Puedes crear tu archivo HTML con el diseño que prefieras (inputs, tablas, etc.) y usar las clases de Bootstrap para aplicar estilos.
-
-Ejemplo: Crea frontend/pages/mi_pagina.html:
+Creación y Acceso a Páginas HTML
+Crear una Página
+Coloca tus archivos en frontend/pages/ (puedes usar subdirectorios como frontend/pages/auth/).
+Usa clases de Bootstrap para estilos (ya incluido por defecto).
+Ejemplo: frontend/pages/mi_pagina.html
 
 html
 
 Copiar
-
 <div class="container">
     <h2>Mi Página</h2>
-    <p>Este es un ejemplo de página personalizada usando Bootstrap.</p>
-    <button class="btn btn-primary">Botón de ejemplo</button>
+    <p class="text-success">Ejemplo con Bootstrap.</p>
+    <button class="btn btn-primary">Click me</button>
 </div>
-Organización con subdirectorios:
+Acceder a Páginas
+URL base: http://localhost/framework-php/public/ (muestra main.html).
+Con subdirectorios: http://localhost/framework-php/public/auth/mi_pagina.
+Creación de un Script JavaScript
+Coloca tus scripts en frontend/assets/js/. Ejemplo: example.js.
 
-Puedes crear subdirectorios dentro de frontend/pages/ para organizar tus archivos. Por ejemplo, frontend/pages/auth/mi_pagina.html.
-El framework los reconocerá automáticamente.
-Acceder a las páginas HTML
-La URL principal es http://localhost/framework-php/public/, que muestra frontend/pages/main.html por defecto.
-Para acceder a una página específica, usa la estructura /<ruta>:
-Ejemplo: http://localhost/framework-php/public/mi_pagina carga frontend/pages/mi_pagina.html.
-Si usas subdirectorios: http://localhost/framework-php/public/auth/mi_pagina carga frontend/pages/auth/mi_pagina.html.
-Nota: No incluyas la extensión .html en la URL.
-
-Creación de un script JavaScript
-Los scripts JavaScript/jQuery se colocan en el directorio frontend/assets/js/. A continuación, un ejemplo de cómo interactuar con el endpoint /framework-php/public/api/example.
-
-Ejemplo: example.js
-Crea el archivo frontend/assets/js/example.js con el siguiente contenido:
-
+Código de Ejemplo
 javascript
 
 Copiar
 jQuery(document).ready(function($) {
-// Ejemplo de CRUD con AJAX para el endpoint /framework-php/public/api/example
-
-    // Registrar un usuario
     function createUser(username, password) {
         $.ajax({
             url: window.MyEndpointRoot + "example",
             type: "POST",
             contentType: "application/json",
-            data: JSON.stringify({ username: username, password: password }),
-            success: function(response) {
-                console.log("Usuario creado:", response);
-            },
-            error: function(xhr) {
-                console.error("Error al crear usuario:", xhr.responseText);
-            }
+            data: JSON.stringify({ username, password }),
+            success: function(response) { console.log("Usuario creado:", response); }
         });
     }
-
-    // Consultar todos los usuarios
-    function readAllUsers() {
-        $.ajax({
-            url: window.MyEndpointRoot + "example",
-            type: "GET",
-            success: function(response) {
-                console.log("Usuarios:", response.data);
-            },
-            error: function(xhr) {
-                console.error("Error al consultar usuarios:", xhr.responseText);
-            }
-        });
-    }
-
-    // Consultar un usuario por ID
-    function readUser(id) {
-        $.ajax({
-            url: window.MyEndpointRoot + "example?id=" + id,
-            type: "GET",
-            success: function(response) {
-                console.log("Usuario:", response.data);
-            },
-            error: function(xhr) {
-                console.error("Error al consultar usuario:", xhr.responseText);
-            }
-        });
-    }
-
-    // Modificar un usuario
-    function updateUser(id, username, password) {
-        $.ajax({
-            url: window.MyEndpointRoot + "example",
-            type: "PUT",
-            contentType: "application/json",
-            data: JSON.stringify({ id: id, username: username, password: password }),
-            success: function(response) {
-                console.log("Usuario actualizado:", response);
-            },
-            error: function(xhr) {
-                console.error("Error al actualizar usuario:", xhr.responseText);
-            }
-        });
-    }
-
-    // Eliminar un usuario
-    function deleteUser(id) {
-        $.ajax({
-            url: window.MyEndpointRoot + "example",
-            type: "DELETE",
-            contentType: "application/json",
-            data: JSON.stringify({ id: id }),
-            success: function(response) {
-                console.log("Usuario eliminado:", response);
-            },
-            error: function(xhr) {
-                console.error("Error al eliminar usuario:", xhr.responseText);
-            }
-        });
-    }
-
-    // Ejemplo de uso (descomentar para probar)
-    /*
-    createUser("testuser", "testpass");
-    readAllUsers();
-    readUser(1);
-    updateUser(1, "newuser", "newpass");
-    deleteUser(1);
-    */
-
+    // ... (otros métodos CRUD)
 });
+
 Nota: Siempre usa window.MyEndpointRoot como prefijo en las URLs de AJAX. Esto asegura que las solicitudes se dirijan correctamente al backend.
 
 Encolar scripts y estilos
