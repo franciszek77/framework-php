@@ -89,26 +89,25 @@ Creación y Acceso a Páginas HTML
 Crear una Página
 Coloca tus archivos en frontend/pages/ (puedes usar subdirectorios como frontend/pages/auth/).
 Usa clases de Bootstrap para estilos (ya incluido por defecto).
-Ejemplo: frontend/pages/mi_pagina.html
+Ejemplo: frontend/pages/mi_pagina.html 
 
-html
-
-Copiar
 <div class="container">
     <h2>Mi Página</h2>
     <p class="text-success">Ejemplo con Bootstrap.</p>
     <button class="btn btn-primary">Click me</button>
 </div>
+
 Acceder a Páginas
 URL base: http://localhost/framework-php/public/ (muestra main.html).
 Con subdirectorios: http://localhost/framework-php/public/auth/mi_pagina.
+
+``` 
 Creación de un Script JavaScript
 Coloca tus scripts en frontend/assets/js/. Ejemplo: example.js.
 
 Código de Ejemplo
 javascript
 
-Copiar
 jQuery(document).ready(function($) {
     function createUser(username, password) {
         $.ajax({
