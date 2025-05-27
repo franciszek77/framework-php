@@ -42,32 +42,17 @@ Este framework está diseñado para ser fácil de usar, permitiendo a los progra
 
 ---
 
-## Estructura de directorios
+## Estructura de Directorios
 
-Después de ejecutar `install.php`, el framework tendrá la siguiente estructura:
+Tras ejecutar `install.php`, el framework tendrá esta estructura:
 
-framework-php/
-├── backend/
-│ ├── config/ (.env, controller.php)
-│ ├── core/ (Config.php, Database.php, Enqueue.php, Render.php, Router.php)
-│ ├── modules/ (example.php, login.php, etc.)
-├── frontend/
-│ ├── pages/ (main.html, login.html, etc.)
-│ ├── assets/
-│ │ ├── css/ (custom_styles.css, etc.)
-│ │ ├── js/ (example.js, login.js, etc.)
-│ │ ├── bootstrap/ (css/bootstrap.min.css, js/bootstrap.bundle.min.js)
-│ ├── templates/
-│ │ ├── headers/ (header.html)
-│ │ ├── footers/ (footer.html)
-├── public/
-│ ├── api.php
-│ ├── index.php
-│ ├── .htaccess
-├── vendor/
-├── composer.json
-├── install.php
-├── readme.md
+| Directorio         | Descripción                                      |
+|--------------------|--------------------------------------------------|
+| `backend/`         | Contiene la lógica del servidor (módulos, config) |
+| `frontend/`        | Contiene páginas HTML y assets (JS, CSS)         |
+| `public/`          | Contiene los puntos de entrada (API, index)      |
+| `templates/`       | Plantillas iniciales generadas por `install.php` |
+| `vendor/`          | Dependencias de Composer (generado automáticamente) |
 
 ---
 
