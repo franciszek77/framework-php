@@ -82,9 +82,11 @@ class Example {
     }
 }
 
+```
+
 Nota: Este archivo (example.php) es un ejemplo de referencia para operaciones CRUD. No lo elimines, ya que te servirá como guía para crear nuevos módulos.
 
-``` 
+
 Creación y Acceso a Páginas HTML
 Crear una Página
 Coloca tus archivos en frontend/pages/ (puedes usar subdirectorios como frontend/pages/auth/).
