@@ -179,16 +179,19 @@ Ejemplo: Crea frontend/pages/mi_pagina.html:
 
 ## Organización con subdirectorios:
 
-Puedes crear subdirectorios dentro de frontend/pages/ para organizar tus archivos. Por ejemplo, frontend/pages/auth/mi_pagina.html.
-El framework los reconocerá automáticamente.
+Puedes crear subdirectorios dentro de frontend/pages/ para organizar tus archivos. 
+Por ejemplo, frontend/pages/auth/mi_pagina.html. El framework los reconocerá automáticamente.
+
 Acceder a las páginas HTML
+
 La URL principal es http://localhost/framework-php/public/, que muestra frontend/pages/main.html por defecto.
 Para acceder a una página específica, usa la estructura /<ruta>:
-Ejemplo: http://localhost/framework-php/public/mi_pagina carga frontend/pages/mi_pagina.html.
-Si usas subdirectorios: http://localhost/framework-php/public/auth/mi_pagina carga frontend/pages/auth/mi_pagina.html.
+Ejemplo: http://localhost/framework-php/public/mi_pagina 
+carga frontend/pages/mi_pagina.html. Si usas subdirectorios: http://localhost/framework-php/public/auth/mi_pagina carga frontend/pages/auth/mi_pagina.html.
 Nota: No incluyas la extensión .html en la URL.
 
-Creación de un script JavaScript
+## Creación de un script JavaScript
+
 Los scripts JavaScript/jQuery se colocan en el directorio frontend/assets/js/. A continuación, un ejemplo de cómo interactuar con el endpoint /framework-php/public/api/example.
 
 Ejemplo: example.js
