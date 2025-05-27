@@ -1,21 +1,36 @@
 # Framework PHP
 
+![Framework PHP Logo](https://via.placeholder.com/150) <!-- Reemplaza con tu logo si lo tienes -->
+
+> Un framework ligero y sencillo para desarrollar aplicaciones web en PHP con soporte para CRUD y API RESTful.
+
+---
+
 ## Introducción
 
-Este framework proporciona una estructura básica para desarrollar aplicaciones web en PHP con soporte para operaciones CRUD y una API RESTful. Está diseñado para ser ligero y fácil de usar, permitiendo a los programadores crear páginas y módulos rápidamente con solo tres archivos: un HTML, un JavaScript/jQuery, y un PHP para manejar la lógica del backend. A continuación, se explica cómo instalar el framework, crear módulos, configurar páginas y endpoints, y más.
+Este framework está diseñado para ser fácil de usar, permitiendo a los programadores crear páginas y módulos con solo tres archivos: un HTML, un JavaScript/jQuery, y un PHP para manejar la lógica del backend. Ideal para proyectos rápidos y escalables.
+
+- **Versión**: 1.0.0
+- **Última actualización**: 26 de mayo de 2025
+- **[Repositorio](https://github.com/franciszek77/framework-php)**
 
 ---
 
 ## Instalación
 
-### Pasos para instalar
+### Requisitos
+- PHP con soporte para MySQLi
+- Servidor web (WAMP, XAMPP, etc.)
+- Composer instalado (`composer --version`)
 
-1. Descomprime el archivo `.rar` en tu directorio de servidor (por ejemplo, `C:\wamp64\www\framework-php`).
-2. Asegúrate de tener Composer instalado (`composer --version`).
-3. Abre una terminal en el directorio raíz del proyecto y ejecuta:
-4. Crea una base de datos MySQL (por ejemplo, `framework`) y anota su nombre.
-5. Accede a `http://localhost/framework-php/install.php` desde tu navegador, ingresa el nombre de la base de datos (y, si aplica, el usuario y contraseña de MySQL), y guarda.
-6. Serás redirigido a `http://localhost/framework-php/public/main`. ¡Listo para programar!
+### Pasos
+1. Descomprime el archivo `.rar` en tu directorio de servidor (ejemplo: `C:\wamp64\www\framework-php`).
+2. Ejecuta `composer install` en la terminal desde el directorio raíz.
+3. Crea una base de datos MySQL (ejemplo: `framework`) y anota su nombre, usuario y contraseña.
+4. Accede a `http://localhost/framework-php/install.php`, ingresa los datos de la base de datos, y guarda.
+5. Serás redirigido a `http://localhost/framework-php/public/main`. ¡Listo para programar!
+
+**Tiempo estimado**: Menos de 2 minutos.
 
 ### Requisitos
 
