@@ -32,14 +32,6 @@ Este framework está diseñado para ser fácil de usar, permitiendo a los progra
 
 **Tiempo estimado**: Menos de 2 minutos.
 
-### Requisitos
-
-- PHP con soporte para MySQLi.
-- Servidor web (como WAMP o XAMPP).
-- Composer instalado.
-
-**Tiempo estimado**: Menos de 2 minutos.
-
 ---
 
 ## Estructura de Directorios
@@ -87,11 +79,14 @@ class Example {
 Nota: Este archivo (example.php) es un ejemplo de referencia para operaciones CRUD. No lo elimines, ya que te servirá como guía para crear nuevos módulos.
 
 
+
 Creación y Acceso a Páginas HTML
 Crear una Página
 Coloca tus archivos en frontend/pages/ (puedes usar subdirectorios como frontend/pages/auth/).
 Usa clases de Bootstrap para estilos (ya incluido por defecto).
 Ejemplo: frontend/pages/mi_pagina.html 
+
+```php
 
 <div class="container">
     <h2>Mi Página</h2>
