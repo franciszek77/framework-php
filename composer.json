@@ -1,0 +1,30 @@
+{
+  "name": "project/framework-php",
+  "description": "Un framework ligero inspirado en WordPress para proyectos PHP",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "MyFramework\\Core\\": "backend/core/",
+      "MyFramework\\Modules\\": "backend/modules/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "twbs/bootstrap": "^5.3.3",
+    "composer/installers": "^2.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "./frontend/assets/bootstrap/": [
+        "type:library",
+        "twbs/bootstrap"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": false
+    }
+  }
+}
